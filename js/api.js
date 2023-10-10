@@ -185,14 +185,23 @@ searchInput.addEventListener('input', () => {
 async function searchCharacters(searchTerm) {
   try {
     const errorMessage = document.getElementById('error-message');
+    errorMessage.textContent = ''; // Limpiar el mensaje de error
 
     if (searchTerm === '') {
-      errorMessage.textContent = ''; // Limpiar el mensaje de error
       const characters = await getCharacters();
       generateCharacterCards(characters);
     } else {
-      errorMessage.textContent = 'No se encontraron personajes con ese nombre.';
-      characterCardsContainer.innerHTML = ''; // Limpiar las tarjetas si no se encuentran resultados en la lista local
+      const characters = await getCharacters(); // Obtener todos los personajes
+      const filteredCharacters = characters.filter((character) =>
+        character.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+
+      if (filteredCharacters.length === 0) {
+        errorMessage.textContent = 'No se encontraron personajes con ese nombre.';
+        characterCardsContainer.innerHTML = ''; // Limpiar las tarjetas si no se encuentran resultados
+      } else {
+        generateCharacterCards(filteredCharacters);
+      }
     }
   } catch (error) {
     console.error('Error al buscar personajes:', error);
