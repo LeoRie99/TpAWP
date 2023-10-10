@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/32x32.png" type="image/png">
+  <title>Alfredo Leonel Portillo - DWM3AP - 2023</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <img src="img/log.png" alt="logo de pagina">
+    <h1>Viva Rick y Morty</h1>
+    <nav>
+      <ul>
+        <li>
+      <input type="text" id="search-input" placeholder="Buscar...">
+      <button id="search-button">Buscar</button>
+    </li>
+    <li>
+      <a href="#" id="favoritos-link">Favoritos</a>
+    </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="row character-cards">
+    </div>
+
+    <div id="button-container">
+      <button id="back-to-list-button" style="display: none;">Volver al listado</button>
+    </div>
+
+    <div id="error-message" class="error-message"></div>    
+  </main>
+
+  <div id="modal" class="modal">
+  </div>
+
+  <footer>
+    <ul>
+    <li class="lis">
+   <h2>Alumno:</h2>
+   <p>Alfredo Leonel Portillo</p>
+    </li>
+    <li class="lis">
+   <h2>Materia:</h2>
+   <p>Aplicaciones web progresivas</p>
+    </li>
+    <li class="lis">
+   <h2>Turno:</h2>
+   <p>Mañana</p>
+    </li>
+    <li class="lis">
+   <h2>Comision:</h2>
+   <p>DWM3AP</p>
+    </li>
+    <li>
+   <h2>Año de cursada:</h2>
+   <p>2023</p>
+    </li>
+    </ul>
+  </footer>
+
+  <script src="js/api.js"></script>
+</body>
+</html>
